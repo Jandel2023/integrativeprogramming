@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment No. 1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+<body>
+    
+    <table class="table table-striped table-bordered table-hover table-sm table-responsive table-light">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">UserID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Body</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          
+        </tbody>
+      </table>
+    
+
+    <!-- <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.onload = function(){
+            var res = JSON.parse(this.responseText);
+            console.log(res);
+            output(res);
+        }
+
+
+        function output(res){
+            var tableBody = document.getElementById('tableBody');
+        
+            for (var i = 0; i < res.length; i++) {
+                var row = "<tr>" +
+                            "<th>" + res[i].id + "</th>" +
+                            "<td>" + res[i].userId + "</td>" +
+                            "<td>" + res[i].title + "</td>" +
+                            "<td>" + res[i].body + "</td>" +
+                          "</tr>";
+                tableBody.innerHTML += row;
+            }
+          
+        }
+
+        xhr.open('GET',"https://jsonplaceholder.typicode.com/posts");
+        xhr.send();
+    </script> -->
+
+
+
+
+
+
+<script>
+    var xhr = new XMLHttpRequest();
+
+    xhr.onload = function(){
+    var result = JSON.parse(this.responseText);
+    console.log(result);
+    output(result);
+    }
+
+
+    function output(result){
+    var tableBody = document.getElementById('tableBody');
+
+    for (var i = 0; i < result.length; i++) {
+    var row = "<tr>" +
+                "<th>" + result[i].id + "</th>" +
+                "<td>" + result[i].userid + "</td>" +
+                "<td>" + result[i].title + "</td>" +
+                "<td>" + result[i].body + "</td>" +
+              "</tr>";
+    tableBody.innerHTML += row;
+    }
+
+    }
+
+    xhr.open('GET',"http://localhost/assignment2.php");
+    xhr.send();
+</script>
+
+</body>
+</html>
