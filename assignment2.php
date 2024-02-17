@@ -19,7 +19,10 @@ if($data->num_rows > 0){
     $fetchdata = $data->fetch_all(MYSQLI_ASSOC);
     echo json_encode($fetchdata);
 }else{
-    echo "No data has been fetch!";
+    echo json_encode([
+        'message' => "No data has been fetch!",
+        'code' => 404,
+    ]);
 }
 
 
